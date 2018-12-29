@@ -1,0 +1,18 @@
+PlateDataNetSpider.py   ----热门板块数据源爬取
+ForexGoldDataNetSpider.py ----国家黄金和外汇储备数据爬虫
+MarketSentimentDataNetSpider.py  ----市场情绪指标动态数据爬虫
+StockAccountDataNetSpider.py     ----股票账户爬虫
+TradeActivityDataNetSpider.py    ----交易活跃度爬虫
+
+
+http://www.wlstock.com/ShuJu/StockAccountStat.aspx  数据中心
+http://finance.qq.com/stock/
+http://gb.cri.cn/45731/more/45768/more45768.htm  股市财经
+http://www.gushi001.com/indexfuture
+http://data.eastmoney.com/IF/Data/Contract.html
+
+http://app.finance.ifeng.com/data/indu/jgzs.php?symbol=58 ---干散货运输市场波罗的海综合运价指数BDI
+
+http://finance.sina.com.cn/money/globalindex/ibor.shtml  ---隔夜银行拆借利率
+http://www.shibor.org/shibor/web/html/LPR.html  ---一年期贷款利率
+http://www.shibor.org/shibor/web/html/  ---上海银行同业拆借利率

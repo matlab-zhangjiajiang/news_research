@@ -1,0 +1,25 @@
+当日股市，汇市评论.
+HuiTongNetSpider.py  ----汇通网，外汇评论爬虫
+AdsNetSpider.py      ----ADS网 ，外汇评论爬虫
+ForexNetSpider.py    ----嘉盛集团，外汇评论爬虫
+GXMetalNetSpider.py  ----国鑫贵金属，贵金属爬虫
+JTMetalNetSpider.py  ----嘉泰贵金属,贵金属爬虫
+SYMetalNetSpider.py  ----申银贵金属,贵金属爬虫
+QJStockNetSpider.py  ----全景财经，股票信息爬虫
+QJFinanceNetSpider.py -----全景财经,宏观经济评论爬虫
+HGStockNetSpider.py   =====华股财经,股票信息爬虫
+JFStockNetSpider.py   -----巨丰财经,股票信息爬虫
+IFengFinanceNetSpider.py ----凤凰网爬虫，宏观爬虫
+
+http://www.jiatai9999.com/    嘉泰贵金属
+http://www.ym206.com/         易鸣贵金属
+http://www.ag022.com/sjhq/Huangjin/   申银贵金属
+http://finance.qq.com/l/stock/qwmy/index.htm   腾讯财经评论
+http://roll.finance.sina.com.cn/finance/pl1/hgds/index.shtml  宏观评论
+http://finance.qq.com/hgjj.htm   腾讯宏观分析
+http://msn.gold.hexun.com/pl/index.html 黄金
+http://www.silver.org.cn/p/   白银评论
+http://www.nbd.com.cn/columns/12 股市评论
+http://www.2258.com/gold/  ---黄金评论
+http://www.2258.com/exchange/ ---外汇评论
+
