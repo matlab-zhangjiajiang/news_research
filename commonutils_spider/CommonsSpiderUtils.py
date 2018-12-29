@@ -31,7 +31,7 @@ def openInternetUrl(webHttp):
     req = urllib2.Request(webHttp,None,req_header)
     resp = urllib2.urlopen(req,None,req_timeout)
     html = resp.read()
-    resp.close();
+    resp.close()
     return html
 
 # filter context 

@@ -1,7 +1,7 @@
 import sys
 sys.path.append("../commonutils_spider/")
 import CommonsSpiderUtils
-import CommonsMysqlUtils
+
 
 def returnStartContext(link,startTarget):
     currentContext = unicode(CommonsSpiderUtils.openInternetUrl(link),'GBK').encode('UTF-8')
@@ -19,7 +19,3 @@ def divisionTarget(startcontext,startfilter,endfilter):
     startIndex = CommonsSpiderUtils.filterContext(startcontext,startfilter)
     endIndex = CommonsSpiderUtils.filterContext(startcontext,endfilter)+len(endfilter)
     return {'targetContext':startcontext[startIndex:endIndex],'nextContext':startcontext[endIndex:]}
-
-# GET MYSQL CONNECTION
-def getMySQLConn():
-    return CommonsMysqlUtils.returnMySQLConn()

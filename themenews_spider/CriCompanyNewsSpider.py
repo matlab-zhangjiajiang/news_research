@@ -31,20 +31,3 @@ def writeDailyCompanyNews():
     link = 'http://gb.cri.cn/45731/more/45768/more45768.htm'  
     webNet = 'http://gb.cri.cn'  
     currentList = crawDailyCompanyNews(link,webNet)
-    conn = CriCompanyNewsSpiderUtils.getMySQLConn()
-    cursor = conn.cursor()
-    try:
-        cursor.execute("DELETE FROM STOCK_POOL_COMPANY_NEWS_TABLE WHERE SOURCEFLAG = 'CRINET'")
-        conn.commit()
-    except conn.Error,e:
-        print "Mysql Error %d: %s" % (e.args[0], e.args[1])
-        conn.rollback()
-    formatSQL = 'INSERT INTO STOCK_POOL_COMPANY_NEWS_TABLE (KEYID,LINKURL,PUBDATE,TITLE,DESCRIPTCONTEXT,SOURCEFLAG) VALUES (%s,%s,%s,%s,%s,%s)'
-    try:
-        cursor.executemany(formatSQL,currentList)
-        conn.commit()
-    except conn.Error,e:
-        print "Mysql Error %d: %s" % (e.args[0], e.args[1])
-        conn.rollback()
-    cursor.close()
-    conn.close()

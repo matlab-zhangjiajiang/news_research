@@ -1,4 +1,4 @@
-import ThemeNewsSpiderUtils;
+import ThemeNewsSpiderUtils
 import uuid
 import time
 
@@ -23,28 +23,6 @@ def  crawCompanyNews(link):
             currentList.append([keyid,linkUrl,pubDate,title,'STOCKSTAR'])
     return currentList
 
-# WRITE COMPANY NEWS BY LINK 
-def writeCompanyNewsByLink(currentLinkList):
-    conn = ThemeNewsSpiderUtils.getMySQLConn()
-    cursor = conn.cursor()
-    try:
-        cursor.execute("DELETE FROM STOCK_POOL_COMPANY_NEWS_TABLE WHERE SOURCEFLAG = 'STOCKSTAR'")
-        conn.commit()
-    except conn.Error,e:
-        print "Mysql Error %d: %s" % (e.args[0], e.args[1])
-        conn.rollback()
-    
-    for link in currentLinkList:
-        currentResult = crawCompanyNews(link)
-        formatSQL = 'INSERT INTO STOCK_POOL_COMPANY_NEWS_TABLE (KEYID,LINKURL,PUBDATE,TITLE,SOURCEFLAG) VALUES (%s,%s,%s,%s,%s)'
-        try:
-            cursor.executemany(formatSQL,currentResult)
-            conn.commit()
-        except conn.Error,e:
-            print "Mysql Error %d: %s" % (e.args[0], e.args[1])
-            conn.rollback()
-    cursor.close()
-    conn.close()
 
 # WRITE COMPANY NEWS INFORMATION 
 def writeCompanyNews():
@@ -58,7 +36,12 @@ def writeCompanyNews():
         currentcontext =  targetContext['targetContext']
         link = 'http://stock.stockstar.com'+ThemeNewsSpiderUtils.filterContextByTarget(currentcontext,'<a href="','" target="_self"')
         currentLinkList.append(link)
-    writeCompanyNewsByLink(currentLinkList)
+    for link in currentLinkList:
+        currentList = crawCompanyNews(link)
+        print(currentList)
+
+if __name__ == '__main__':
+    writeCompanyNews()
 
 
 
